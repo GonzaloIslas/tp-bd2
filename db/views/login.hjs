@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Login</title>
+	<!-- <link rel="stylesheet" href="/asset/css/include.css"> -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+	<div class="container d-flex justify-content-center align-items-center" style="padding-top: 40px">
+		<div class="card" style="padding: 48px 0px 30px;">
+			<div class="card-body">
+				<h4 class="text-center" style="font-family: 'Google Sans',arial,sans-serif; font-size: 24px; font-weight: 400; line-height: 1.3333;">Nombre del Sistema</h4>
+				<h4 class="text-center" style="font-family: 'Google Sans',arial,sans-serif; font-size: 22px; font-weight: 400; line-height: 1.3333;">Iniciar sesi&oacute;n</h4>
+				<br>
+				<br>
+				<form action="" method="post">
+					<div class="row justify-content-center p-3">
+						<div class="col-md-12 mb-12">
+							<div class="form-group">
+								<!-- <label for="user_name">Usuario</label> -->
+								<input id="usuario" type="text" class="form-control" autocomplete="off" autofocus="true" placeholder="Correo electr&oacute;nico o usuario">
+									<!-- <small class="form-text text-muted">Ingrese usuario</small> -->
+									<small class="form-text text-danger"></small> 
+							</div>
+						</div>
+						<div class="col-md-12 mb-12">
+							<div class="form-group">
+								<!-- <label for="user_password">Contrase&ntilde;a</label> -->
+								<input id="contraseña" type="password" class="form-control" autocomplete="off" placeholder="Contrase&ntilde;a" required>
+									<small class="form-text text-muted">Introduce tu contrase&ntilde;a</small>
+									<small class="form-text text-danger"></small> 
+							</div>
+						</div>
+					</div>
+					<div class="row p-3">
+  						<div class="col-md-4">
+							<a href="../bd2/alta_usuario.html" style="font-weight: 500;" class="card-link">Crear cuenta</a>
+  						</div>
+  						<div class="col-md-4 ml-auto">
+							<button type="button" id="login-btn" class="btn btn-primary btn-block btn-raised" onclick="Usuario.login();">Siguiente</button>	
+  						</div>					
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- jquery -->
+	<script src="asset/vendor/jquery/3.2.1/jquery-3.2.1.js"></script>
+	<!-- bootstrap -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+
+	<script src="asset/js/controller.js"></script>
+	<script src="asset/js/usuario.js"></script>
+</body>
+</html>

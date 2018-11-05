@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Nombre del Sistema</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<style>
+		.modal-body {
+			max-height: calc(100vh - 210px);
+			overflow-y: auto;
+		}
+	</style>
+</head>
+<body>
+
+	<nav class="navbar navbar-light bg-light justify-content-between">
+		<a class="navbar-brand">Nombre del Sistema</a>
+		<a class="navbar-brand">Hola @nombre_usuario</a>
+		<form class="form-inline">
+			<input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
+			<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+		</form>
+	</nav>
+
+	<div class="container">
+		<div class="row p-3">
+			<div class="col">
+				<button type="button" class="btn btn-primary" onclick="openModal()">Nuevo</button>
+			</div>
+		</div>
+		<div class="row p-3">
+			<div class="col">
+				<div class="card text-center">
+					<div class="card-header">
+						<div class="row">
+							<div class="col text-left">
+								<span class="badge badge-primary badge-pill">14</span>
+							</div>
+							<div class="col">
+								Resultados de tu Busqueda
+							</div>
+							<div class="col text-right">
+								<button type="button" class="btn btn-link" onclick="modalComentario()">Ver comentarios</button>
+							</div>
+						</div>
+					</div>
+					<div class="card-body">
+						<div class="row">
+							<div class="col">
+								<div class="row">
+									<div class="col align-self-center" style="text-align: right;">
+										<img src="partly_cloudy.png" class="img-fluid" alt="Responsive image">
+									</div>									
+									<div class="col" style="text-align: left;">
+										<p style="font-size: 3.5rem">19 <span style="font-size: 2.5rem">&ordm;C</span></p>
+									</div>
+								</div>
+							</div>
+							<div class="col">
+								<div class="row">
+									<div class="col">
+										<h5 class="card-title">Bariloche, Rio Negro</h5>
+										<p class="mb-1">miercoles, 17:00 <br> Mayormente soleado</p>
+									</div>
+									<div class="col align-self-end">
+										<p class="mb-1" style="color: #878787">
+											Prob. de precipitaciones: 0% <br>
+										 	Humedad: 28 % <br>
+										 	Viento: a 13 km/h. <br>
+										 </p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- Favoritos -->
+		<div class="row p-3">
+			<div class="col-sm-4">
+				<div class="card">
+					<div class="card-body">
+						<h5 class="card-title">Buenos Aires</h5>
+						<p class="card-text" style="color: #878787">
+							Mayormente nublado <br>
+							Prob. de precipitaciones: 60% <br>
+							Humedad: 75 % <br>
+							Viento: a 5 km/h. <br>
+						</p>
+						<a href="#" class="btn btn-primary">Actualiz&aacute;</a>
+						<a href="https://www.windy.com/" title="Editar"><img src="windy.jpg" style="width: 40px; height: 40px; border-radius: .25rem;" class="img-fluid" alt="Responsive image"></a>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="card">
+					<div class="card-body">
+						<h5 class="card-title">Mendoza</h5>
+						<p class="card-text" style="color: #878787">
+							Tormentas dispersas <br>
+							Prob. de precipitaciones: 40% <br>
+							Humedad: 62 % <br>
+							Viento: a 14 km/h. <br>
+						</p>
+						<a href="#" class="btn btn-primary">Actualiz&aacute;</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="card">
+					<div class="card-body">
+						<h5 class="card-title">Santiago de Chile</h5>
+						<p class="card-text" style="color: #878787">
+							Soleado <br>
+							Prob. de precipitaciones: 0% <br>
+							Humedad: 55 % <br>
+							Viento: a 19 km/h. <br>
+						</p>
+						<a href="#" class="btn btn-primary">Actualiz&aacute;</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<!-- Modal -->
+	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Nueva publicaci&oacute;n</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+
+					<form>
+						<!-- Localidad -->
+						<div class="form-group">
+							<input id="localidad" type="text" class="form-control" placeholder="Localidad">
+						</div>
+
+						<!-- Temperatura y Prob.de precipitaciones-->
+						<div class="form-row">
+							<div class="form-group col-md-6">
+								<input id="temperatura" type="number" class="form-control" placeholder="Temperatura en &ordm;C">
+							</div>
+							<div class="form-group col-md-6">
+								<input id="precipitacion" type="number" class="form-control" placeholder="Prob.de precipitaciones">
+							</div>
+
+						</div>
+
+						<!-- Humedad y Viento-->
+						<div class="form-row">
+							<div class="form-group col-md-6">
+								<input id="humedad" type="number" class="form-control" placeholder="Humedad - %">
+							</div>
+							<div class="form-group col-md-6">
+								<input id="viento" type="number" class="form-control" placeholder="Viento en km/h.">
+							</div>
+						</div>
+
+						<!-- Descripcion -->
+						<div class="input-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text">Comentario</span>
+							</div>
+							<textarea id="comentario" class="form-control" aria-label="With textarea"></textarea>
+						</div>
+					</form>
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" data-dismiss="modal" class="btn btn-outline-secondary">Cerrar</button>
+					<button type="button" id="btn_alta_usuario" class="btn btn-outline-success" onclick="Post.nuevo();">Compartir</button>	
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+		<!-- Modal -->
+	<div class="modal fade" id="modal_comentario" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Comentarios</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title">Pablo</h5>
+							<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title">Leo</h5>
+							<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title">Carlos</h5>
+							<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title">Nico</h5>
+							<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+						</div>
+					</div>
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" data-dismiss="modal" class="btn btn-outline-secondary">Cerrar</button>
+					<button type="button" class="btn btn-outline-success">Compartir</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- jquery -->
+	<script src="asset/vendor/jquery/3.2.1/jquery-3.2.1.js"></script>
+	<!-- bootstrap -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+	<script src="asset/js/controller.js"></script>
+	<script src="asset/js/usuario.js"></script>
+	<script src="asset/js/post.js"></script>
+</body>
+</html>

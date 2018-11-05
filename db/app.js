@@ -10,6 +10,9 @@ var logger = require('morgan');
 var loggerRouter = require('./routes/logger');
 var usersRouter = require('./routes/users');
 var localsRouter = require('./routes/locals');
+var modalRouter = require('./routes/models');
+var indexRouter = require('./routes/index');
+var altaUsuarioRouter = require('./routes/alta_Usuario');
 
 var app = express();
 
@@ -34,6 +37,9 @@ app.use((req, res, next) => {
 app.use('/login', loggerRouter);
 app.use('/api/users', usersRouter);
 app.use('/api/locals', localsRouter);
+app.use('/api/index', indexRouter);
+app.use('/api/modal', modalRouter);
+app.use('/api/signup', altaUsuarioRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
