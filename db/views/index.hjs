@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title>Nombre del Sistema</title>
+	<title>BD2</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 	<style>
 		.modal-body {
@@ -16,8 +16,8 @@
 <body>
 
 	<nav class="navbar navbar-light bg-light justify-content-between">
-		<a class="navbar-brand">Nombre del Sistema</a>
-		<a class="navbar-brand">Hola @nombre_usuario</a>
+		<a class="navbar-brand">BD2</a>
+		<a class="navbar-brand">Hola {{ nombre_usuario }}</a>
 		<form class="form-inline">
 			<input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
 			<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
@@ -54,22 +54,15 @@
 										<img src="partly_cloudy.png" class="img-fluid" alt="Responsive image">
 									</div>									
 									<div class="col" style="text-align: left;">
-										<p style="font-size: 3.5rem">19 <span style="font-size: 2.5rem">&ordm;C</span></p>
+										<p style="font-size: 3.5rem">666 <span style="font-size: 2.5rem">&ordm;C</span></p>
 									</div>
 								</div>
 							</div>
 							<div class="col">
 								<div class="row">
 									<div class="col">
-										<h5 class="card-title">Bariloche, Rio Negro</h5>
-										<p class="mb-1">miercoles, 17:00 <br> Mayormente soleado</p>
-									</div>
-									<div class="col align-self-end">
-										<p class="mb-1" style="color: #878787">
-											Prob. de precipitaciones: 0% <br>
-										 	Humedad: 28 % <br>
-										 	Viento: a 13 km/h. <br>
-										 </p>
+										<h5 class="card-title">{{ ubicacion }}</h5>
+										<p class="mb-1">{{fecha}}<br> {{texto}}</p>
 									</div>
 								</div>
 							</div>
@@ -106,7 +99,7 @@
 							Humedad: 62 % <br>
 							Viento: a 14 km/h. <br>
 						</p>
-						<a href="#" class="btn btn-primary">Actualiz&aacute;</a>
+						<a href="#" id="btn-med" name="btn-med" class="btn btn-primary">Actualiz&aacute;</a>
 					</div>
 				</div>
 			</div>

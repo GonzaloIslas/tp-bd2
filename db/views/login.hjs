@@ -12,36 +12,36 @@
 	<div class="container d-flex justify-content-center align-items-center" style="padding-top: 40px">
 		<div class="card" style="padding: 48px 0px 30px;">
 			<div class="card-body">
-				<h4 class="text-center" style="font-family: 'Google Sans',arial,sans-serif; font-size: 24px; font-weight: 400; line-height: 1.3333;">Nombre del Sistema</h4>
+				<h4 class="text-center" style="font-family: 'Google Sans',arial,sans-serif; font-size: 24px; font-weight: 400; line-height: 1.3333;">BD2</h4>
 				<h4 class="text-center" style="font-family: 'Google Sans',arial,sans-serif; font-size: 22px; font-weight: 400; line-height: 1.3333;">Iniciar sesi&oacute;n</h4>
 				<br>
 				<br>
-				<form action="" method="post">
+				<form action="/login" method="post">
 					<div class="row justify-content-center p-3">
 						<div class="col-md-12 mb-12">
 							<div class="form-group">
 								<!-- <label for="user_name">Usuario</label> -->
-								<input id="usuario" type="text" class="form-control" autocomplete="off" autofocus="true" placeholder="Correo electr&oacute;nico o usuario">
-									<!-- <small class="form-text text-muted">Ingrese usuario</small> -->
-									<small class="form-text text-danger"></small> 
+								<input name='user_name' id="usuario" type="text" class="form-control" autocomplete="off" autofocus="true" placeholder="Correo electr&oacute;nico o usuario">
+								<!-- <small class="form-text text-muted">Ingrese usuario</small> -->
+								<small class="form-text text-danger"></small> 
 							</div>
 						</div>
 						<div class="col-md-12 mb-12">
 							<div class="form-group">
 								<!-- <label for="user_password">Contrase&ntilde;a</label> -->
-								<input id="contraseña" type="password" class="form-control" autocomplete="off" placeholder="Contrase&ntilde;a" required>
-									<small class="form-text text-muted">Introduce tu contrase&ntilde;a</small>
-									<small class="form-text text-danger"></small> 
+								<input name='user_password' id="contraseÃ±a" type="password" class="form-control" autocomplete="off" placeholder="Contrase&ntilde;a" required>
+								<small class="form-text text-muted">Introduce tu contrase&ntilde;a</small>
+								<small class="form-text text-danger"></small> 
 							</div>
 						</div>
 					</div>
 					<div class="row p-3">
-  						<div class="col-md-4">
-							<a href="../bd2/alta_usuario.html" style="font-weight: 500;" class="card-link">Crear cuenta</a>
+						<div class="col-md-4">
+							<a href="/signup" style="font-weight: 500;" class="card-link">Crear cuenta</a>
   						</div>
-  						<div class="col-md-4 ml-auto">
-							<button type="button" id="login-btn" class="btn btn-primary btn-block btn-raised" onclick="Usuario.login();">Siguiente</button>	
-  						</div>					
+						<div class="col-md-4 ml-auto">
+							<button type="submit" id="login-btn" class="btn btn-primary btn-block btn-raised" >Siguiente</button>	
+						</div>					
 					</div>
 				</form>
 			</div>

@@ -6,15 +6,23 @@ var lessMiddleware = require('less-middleware');
 var logger = require('morgan');
 
 
+
 //routes
-var loggerRouter = require('./routes/logger');
-var usersRouter = require('./routes/users');
-var localsRouter = require('./routes/locals');
-var modalRouter = require('./routes/models');
+var loginRouter = require('./routes/login');
 var indexRouter = require('./routes/index');
 var altaUsuarioRouter = require('./routes/alta_Usuario');
 
 var app = express();
+
+//DB
+
+var mongoose = require('mongoose');
+var port = 3700;
+//pasword del admin UufWXMNDSVwzmVSg
+
+mongoose.connect("mongodb://admin:UufWXMNDSVwzmVSg@bd2-shard-00-00-az5yp.mongodb.net:27017,bd2-shard-00-01-az5yp.mongodb.net:27017,bd2-shard-00-02-az5yp.mongodb.net:27017/test?ssl=true&replicaSet=BD2-shard-0&authSource=admin&retryWrites=true",{useNewUrlParser:true});
+
+//DB
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -34,12 +42,9 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use('/login', loggerRouter);
-app.use('/api/users', usersRouter);
-app.use('/api/locals', localsRouter);
-app.use('/api/index', indexRouter);
-app.use('/api/modal', modalRouter);
-app.use('/api/signup', altaUsuarioRouter);
+app.use('/login', loginRouter);
+app.use('/index', indexRouter);
+app.use('/signup', altaUsuarioRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

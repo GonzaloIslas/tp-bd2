@@ -3,7 +3,10 @@ var router = express.Router();
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+  //request a mongo de toda la data
+
+  res.render('index', {});
 });
+
 
 module.exports = router;

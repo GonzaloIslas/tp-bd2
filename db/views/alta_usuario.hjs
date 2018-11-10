@@ -17,17 +17,17 @@
 				<h5 class="card-title">Crear tu cuenta de CLIMAPP</h5>
 				<br>
 				<br>
-				<form action="" method="post">
+				<form action="/signup" method="post">
 					<!-- Nombre y Apellido del nuevo usuario -->
 					<div class="row p-2">
 						<div class="col-6">
 							<div class="form-group">
-								<input id="nom_usuario" type="text" class="form-control" placeholder="Ingresa tu nombre">
+								<input name="nombre_usuario" type="text" class="form-control" placeholder="Ingresa tu nombre">
 							</div>
 						</div>
 						<div class="col-6">
 							<div class="form-group">
-								<input id="ape_usuario" type="text" class="form-control" placeholder="Ingresa tu apellido">
+								<input name="apellido_usuario" type="text" class="form-control" placeholder="Ingresa tu apellido">
 							</div>
 						</div>
 					</div>
@@ -35,7 +35,7 @@
 					<div class="row p-2">
 						<div class="col-12 text-left">
 							<div class="form-group">
-								<input id="mail_usuario" type="text" class="form-control" placeholder="Ingresa tu direccion de correo electr&oacute;nico o un nombre de usuario">
+								<input name="nick_usuario" type="text" class="form-control" placeholder="Un nombre de usuario">
 								<small class="text-muted">Puedes utilizar letras, n&uacute;meros y puntos</small>
 							</div>
 						</div>
@@ -44,7 +44,7 @@
 					<div class="row p-2">
 						<div class="col-6 text-left">
 							<div class="form-group">
-								<input id="pass_usuario" type="password" class="form-control" placeholder="Contrase&ntilde;a">
+								<input name="password_usuario" type="password" class="form-control" placeholder="Contrase&ntilde;a">
 								<small class="text-muted">Utiliza ocho caracteres como m&iacute;nimo con una combinaci&oacute;n de letras, n&uacute;meros y s&iacute;mbolos</small>
 							</div>
 						</div>
@@ -57,10 +57,10 @@
 
 					<div class="row p-2">
   						<div class="col-md-4 text-left">
-							<a href="../bd2/login.html" style="font-weight: 500;" class="card-link">Prefiero iniciar sesi&oacute;n</a>
+							<a href="/login" style="font-weight: 500;" class="card-link">Prefiero iniciar sesi&oacute;n</a>
   						</div>
   						<div class="col-md-4 ml-auto">
-							<button type="button" id="btn_alta_usuario" class="btn btn-primary btn-block btn-raised" onclick="Usuario.alta();">Crear cuenta</button>
+							<button type="submit" id="btn_alta_usuario" class="btn btn-primary btn-block btn-raised" ">Crear cuenta</button>
   						</div>					
 					</div>
 				</form>
