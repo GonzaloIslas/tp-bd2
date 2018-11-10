@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
 var User = require('../models/usuario');
+
 /* GET users listing. */
 router.get('/', function(req, res, next) {
 	res.render('login');
@@ -27,7 +28,7 @@ router.post('/', function(req, res, next){
 			});
 		}
 
-		return res.json(user);
+		return res.redirect('/index', user);
 	});
 });
 

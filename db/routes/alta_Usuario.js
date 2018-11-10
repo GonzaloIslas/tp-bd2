@@ -24,7 +24,7 @@ router.post('/', function(req, res, next){
 
 		return res.status(200).send();
 	});
-	res.redirect('/index');
+	res.redirect('/login');
 
 });
 

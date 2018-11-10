@@ -12,12 +12,15 @@ var loginRouter = require('./routes/login');
 var indexRouter = require('./routes/index');
 var altaUsuarioRouter = require('./routes/alta_Usuario');
 
+/*var publicacionRouter = require('./routes/publicacion');*/
+
 var app = express();
 
 //DB
 
 var mongoose = require('mongoose');
 var port = 3700;
+
 //pasword del admin UufWXMNDSVwzmVSg
 
 mongoose.connect("mongodb://admin:UufWXMNDSVwzmVSg@bd2-shard-00-00-az5yp.mongodb.net:27017,bd2-shard-00-01-az5yp.mongodb.net:27017,bd2-shard-00-02-az5yp.mongodb.net:27017/test?ssl=true&replicaSet=BD2-shard-0&authSource=admin&retryWrites=true",{useNewUrlParser:true});
@@ -45,6 +48,7 @@ app.use((req, res, next) => {
 app.use('/login', loginRouter);
 app.use('/index', indexRouter);
 app.use('/signup', altaUsuarioRouter);
+/*app.use('/publicacion', publicacionRouter);*/
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
