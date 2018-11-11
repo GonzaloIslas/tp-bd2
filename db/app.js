@@ -11,8 +11,7 @@ var logger = require('morgan');
 var loginRouter = require('./routes/login');
 var indexRouter = require('./routes/index');
 var altaUsuarioRouter = require('./routes/alta_Usuario');
-
-/*var publicacionRouter = require('./routes/publicacion');*/
+var publicacionRouter = require('./routes/alta_Publicacion');
 
 var app = express();
 
@@ -23,7 +22,23 @@ var port = 3700;
 
 //pasword del admin UufWXMNDSVwzmVSg
 
-mongoose.connect("mongodb://admin:UufWXMNDSVwzmVSg@bd2-shard-00-00-az5yp.mongodb.net:27017,bd2-shard-00-01-az5yp.mongodb.net:27017,bd2-shard-00-02-az5yp.mongodb.net:27017/test?ssl=true&replicaSet=BD2-shard-0&authSource=admin&retryWrites=true",{useNewUrlParser:true});
+//mongoose.connect("mongodb://admin:UufWXMNDSVwzmVSg@bd2-shard-00-00-az5yp.mongodb.net:27017,bd2-shard-00-01-az5yp.mongodb.net:27017,bd2-shard-00-02-az5yp.mongodb.net:27017/test?ssl=true&replicaSet=BD2-shard-0&authSource=admin&retryWrites=true",{useNewUrlParser:true});
+
+mongoose.connect("mongodb://jmamani.documents.azure.com:10255/clima"+"?ssl=true&replicaSet=globaldb", {
+  auth: {
+    user: "jmamani",
+    password: "qKW8pnfEW1p0pAio6yElp1ktvp7pYibVtqp87S9oj1HLOALfXEZlc6PboMxCrFqY50NiLORxYyERrLPEtGhFdw=="
+  }
+})
+	.then(() => {
+		console.log('Conexión a la base de datos establecida...');
+
+		// creación del servidor
+		app.listen(port, () => {
+			console.log("Servidor corriendo en la URL: localhost:3700");
+		});
+	})
+	.catch((err) => console.error(err));
 
 //DB
 
@@ -48,7 +63,7 @@ app.use((req, res, next) => {
 app.use('/login', loginRouter);
 app.use('/index', indexRouter);
 app.use('/signup', altaUsuarioRouter);
-/*app.use('/publicacion', publicacionRouter);*/
+app.use('/publicacion', publicacionRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

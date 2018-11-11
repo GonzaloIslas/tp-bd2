@@ -2,16 +2,17 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var PublicacionSchema = Schema({
-	texto: String,
-	ubicacion: String,
-	fecha: Date,
-	publicador: String,
-	grados: String,
+	localidad: String,
+	temperatura: String,
+	probDePrecipitacion: Date,
+	humedad: String,
+	viento: String,
+	descripcion: String,
 	comentarios: [{
 		comentario: String,
 		nick_usuario: String,
 	}]
-},{collectio: 'Publicacion'});
+},{collection: 'Publicacion'});
 
 var Publicacion = mongoose.model('Publicaciones', PublicacionSchema);
 
